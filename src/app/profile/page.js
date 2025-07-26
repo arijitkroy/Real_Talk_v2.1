@@ -7,6 +7,7 @@ import toast from 'react-hot-toast';
 import { doc, getDoc, setDoc, deleteDoc } from 'firebase/firestore';
 import { updateProfile } from 'firebase/auth';
 import { useUser } from '@/context/UserContext';
+import Image from "next/image";
 
 const avatarStyles = ['thumbs', 'adventurer', 'avataaars', 'fun-emoji', 'bottts'];
 
@@ -116,13 +117,15 @@ export default function ProfilePage() {
             Welcome, {displayName || 'User'}!
           </h2>
 
-          <img
+          <Image
             src={
               photoURL ||
               `https://api.dicebear.com/7.x/${avatarStyle}/svg?seed=${displayName || 'guest'}`
             }
             alt="avatar"
             className="w-24 h-24 rounded-full mx-auto mb-4 object-cover border-2"
+            width={40} 
+            height={40}
           />
 
           <p className="text-center text-gray-500 text-sm mb-4">Email: {localUser?.email}</p>
