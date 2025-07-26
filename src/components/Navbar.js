@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { useUser } from "@/context/UserContext";
 import { signOut } from "firebase/auth";
 import { auth } from "@/lib/firebase";
@@ -55,10 +56,12 @@ export default function Navbar() {
               onClick={() => setDropdownOpen((prev) => !prev)}
               className="flex items-center gap-2 focus:outline-none"
             >
-              <img
+              <Image
                 src={avatar}
                 alt="avatar"
                 className="w-8 h-8 rounded-full border border-white"
+                width={40} 
+                height={40}
               />
               <span className="text-sm hidden sm:inline">{username}</span>
             </button>
