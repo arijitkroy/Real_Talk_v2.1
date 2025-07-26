@@ -74,32 +74,10 @@ npm run dev
 
 ---
 
-## 📸 Screenshots
-
-| Chat View | Markdown Rendering |
-|-----------|--------------------|
-| ![Chat](./public/screenshot-chat.png) | ![Markdown](./public/screenshot-markdown.png) |
-
----
-
 ## 🔐 Authentication
 
 Basic Firebase Auth is assumed (Google or Email/Password).
 You can extend it as needed using `useAuth()` hook.
-
----
-
-## 📂 Folder Structure
-
-```
-src/
-├── app/
-│   ├── page.js             // Main chat UI
-├── lib/
-│   ├── firebase.js         // Firebase setup
-│   ├── geminiApi.js        // Gemini fetch logic
-│   └── useAuth.js          // Auth context hook
-```
 
 ---
 
@@ -115,4 +93,4 @@ src/
 
 ## 📄 License
 
-MIT © 2025 [Your Name](https://github.com/your-username)
+MIT © 2025 Arijit Kumar Roy(https://github.com/arijitkroy)
