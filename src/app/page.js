@@ -15,9 +15,9 @@ export default function HomePage() {
           <ul className="list-disc pl-5 mt-2 space-y-1">
             <li>🧠 Chat with AI (powered by Gemini or GPT)</li>
             <li>💬 Join public and private chatrooms</li>
-            <li>{👤 Manage your profile & preferences}</li>
+            <li>👤 Manage your profile & preferences</li>
             <li>🔒 Secure, authenticated access</li>
-            <li>{⚡ Fast & responsive with Firebase backend}</li>
+            <li>⚡ Fast & responsive with Firebase backend</li>
           </ul>
 
         <p className="text-md mt-6 text-center">
