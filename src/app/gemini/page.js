@@ -10,6 +10,7 @@ import rehypeRaw from "rehype-raw";
 import rehypeHighlight from "rehype-highlight";
 import remarkMath from "remark-math";
 import rehypeKatex from "rehype-katex";
+import { useRouter } from "next/navigation";
 
 export default function GeminiChatPage() {
   const [messages, setMessages] = useState([]);
@@ -17,6 +18,13 @@ export default function GeminiChatPage() {
   const [loading, setLoading] = useState(false);
   const bottomRef = useRef(null);
   const { user } = useUser();
+  const router = useRouter();
+
+  useEffect(() => {
+    if (!user) {
+      router.push("/auth/login");
+    }
+  }, [user, router]);
 
   const chatRef = user?.uid
     ? collection(db, "users", user.uid, "geminiMessages")
