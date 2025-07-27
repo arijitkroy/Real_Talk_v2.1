@@ -11,7 +11,7 @@ export default function HomePage() {
         </h1>
 
         <p className="text-lg mb-4">
-          RealTalk AI is your personal companion for intelligent conversations, powered by advanced language models. Whether you're chatting casually or exploring deep topics, our platform ensures an intuitive and responsive experience.
+          RealTalk AI is your personal companion for intelligent conversations, powered by advanced language models. Whether you&apos;re chatting casually or exploring deep topics, our platform ensures an intuitive and responsive experience.
         </p>
 
         <p className="text-md mb-4">✨ Features:</p>
