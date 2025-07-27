@@ -1,64 +1,100 @@
+# 💬 Real Talk — Gemini + Chatroom App
 
-# 💬 Gemini Chat App
-
-A modern chat application using **Firebase Gemini AI** powered by **Next.js**, **Tailwind CSS**, and **Firestore** for real-time message storage and retrieval.
+A feature-rich chat platform built with **Next.js**, **Tailwind CSS**, **Firebase**, and **Firebase Gemini AI**.  
+Supports both **real-time chatrooms with real users** and **one-on-one conversations with Gemini AI**.
 
 ---
 
 ## ✨ Features
 
-- 🔥 Gemini model integration via **Firebase AI**
-- 💾 Realtime chat history storage with **Cloud Firestore**
-- 🧠 Dynamic AI response streaming with `loading` indicator
-- 🎨 Responsive and dark-themed UI using **Tailwind CSS**
-- ⬇️ Auto-scroll to newest messages on send/receive
-- 🧹 **Clear Chat** with confirmation and Firestore cleanup
-- 🧾 Markdown support with:
-  - **Bold**, *Italic*, `Inline code`
-  - 📊 Tables
-  - 📐 LaTeX math expressions
-  - 🎨 Syntax highlighting for code blocks
-  - 😃 Emojis!
+### 🤖 Gemini AI Chat
+- 🔥 Powered by **Firebase Gemini AI**
+- 📄 Markdown support (tables, code, math, etc.)
+- 🧠 Streaming responses with typing indicator
+- 🗑️ Clear chat history (with Firestore cleanup)
+- 💾 Auto-save messages in Firestore
+- ⬇️ Auto-scroll to latest message
+
+### 👥 Real-Time Chatrooms
+- 🏷️ Create or join rooms with unique codes
+- 👨‍👩‍👧 Live member count and presence
+- 📝 Send and receive messages in real time
+- 📌 Room ID copy button for easy sharing
+- 🚪 Join/leave notifications shown in chat
+- 🔐 Duplicate room names not allowed
+- 🧹 Clean UI with auto-scroll and separators
+
+### 🎨 Design & UX
+- 🌓 Dark mode default
+- 🪄 DiceBear avatar selection + preview
+- 🧼 Hidden scrollbars until interaction
+- 📱 Fully responsive on mobile and desktop
 
 ---
 
 ## 📦 Tech Stack
 
-| Tech           | Usage                     |
-|----------------|---------------------------|
-| Next.js        | Frontend & App Routing    |
-| Tailwind CSS   | UI Design and Styling     |
-| Firebase       | Auth & Firestore Database |
-| Gemini (via Firebase AI) | Chat responses     |
-| React Markdown | Rich formatting support   |
+| Tech                 | Purpose                         |
+|----------------------|----------------------------------|
+| **Next.js**          | App framework & routing         |
+| **Tailwind CSS**     | Styling                         |
+| **Firebase**         | Auth, Firestore, Realtime Sync  |
+| **Firebase Gemini AI** | Gemini model integration      |
+| **React Markdown**   | Message formatting              |
+
+---
+
+## 🚀 How to Use the App
+
+### 🔐 Authentication
+- Log in using your Google account (via Firebase Auth)
+- Your identity will be linked with chatroom activity and AI chat history
+
+### 💬 Chat with Gemini AI
+1. Go to the **Gemini Chat** page
+2. Start typing and press `Send` or hit `Enter`
+3. Watch Gemini respond live (streamed)
+4. You can clear messages using the "Clear Chat" button
+
+### 👥 Chatroom Mode
+1. Navigate to the **Chatroom Lobby**
+2. Either:
+   - Create a new room with a unique name, or
+   - Join using an existing room code
+3. You'll be redirected to the room where:
+   - You can chat with others in real-time
+   - Messages are updated live via Firestore
+   - Join/leave alerts are displayed in chat
+   - Member count is shown and updates in real-time
+   - Room ID is easily copyable from the top right
 
 ---
 
 ## 🔧 Setup Instructions
 
-1. **Clone the Repository**
+### 1. Clone the Repository
 
 ```bash
-git clone https://github.com/your-username/gemini-chat-app.git
-cd gemini-chat-app
+git clone https://github.com/your-username/real-talk.git
+cd real-talk
 ```
 
-2. **Install Dependencies**
+### 2. Install Dependencies
 
 ```bash
 npm install
 ```
 
-3. **Configure Firebase**
+### 3. Firebase Configuration
 
-- Create a Firebase project
+- Create a Firebase project at [console.firebase.google.com](https://console.firebase.google.com)
 - Enable:
-  - **Authentication**
-  - **Firestore Database**
-  - **Gemini AI API (firebase/ai)**
-- Copy your Firebase config and update `/lib/firebase.js`
+  - **Authentication (Google Sign-In)**
+  - **Cloud Firestore**
+  - **Firebase Gemini AI** (`firebase/ai`)
+- Copy your Firebase config into `/lib/firebase.js`
 
-4. **Run the Dev Server**
+### 4. Run the App Locally
 
 ```bash
 npm run dev
@@ -66,31 +102,48 @@ npm run dev
 
 ---
 
-## 🧠 Gemini Integration
+## 📐 Markdown + LaTeX Support
 
-- Responses are streamed from `@firebase/ai`
-- AI messages are persisted to Firestore in `users/{uid}/messages`
-- Supports enhanced formatting using `react-markdown`, `rehype-katex`, `remark-gfm`, and `rehype-highlight`.
+This app supports enhanced rendering of:
+- **Bold**, *Italic*, `inline code`
+- ```js
+  Code blocks
+  ```
+- 📊 Tables
+- 📐 LaTeX expressions (`$E = mc^2$`)
+- 😄 Emojis
+
+Powered by:
+- `react-markdown`
+- `remark-gfm`
+- `rehype-katex`
+- `rehype-highlight`
 
 ---
 
-## 🔐 Authentication
+## ✅ To-Do
 
-Basic Firebase Auth is assumed (Google or Email/Password).
-You can extend it as needed using `useAuth()` hook.
+- [ ] Typing indicator in chatroom
+- [ ] Room privacy & password protection
+- [ ] Media sharing (images, audio)
+- [ ] Downloadable chat history
+- [ ] Message reactions
+- [ ] Push notifications
 
 ---
 
-## ✅ To Do
+## 🧠 Credits
 
-- [ ] Multi-user support
-- [ ] Image/voice input
-- [ ] Message reaction system
-- [ ] Typing indicator
-- [ ] Chat backup/download
+- Gemini AI via `@firebase/ai`
+- Avatars via [DiceBear Avatars](https://www.dicebear.com)
+- Markdown rendering powered by React Markdown + plugins
 
 ---
 
 ## 📄 License
 
-MIT © 2025 Arijit Kumar Roy(https://github.com/arijitkroy)
+MIT © 2025 [Arijit Kumar Roy](https://github.com/arijitkroy)
+
+---
+
+**Happy chatting! 💬**
