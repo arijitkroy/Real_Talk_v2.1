@@ -21,7 +21,7 @@ export default function HomePage() {
           </ul>
 
         <p className="text-md mt-6 text-center">
-          Get started by <a href="/auth/login" className="text-gray-300 underline hover:text-gray-500">signing in</a> or exploring our <a href="/chatrooms" className="text-gray-300 underline hover:text-gray-500">chatrooms</a>.
+          Get started by <a href="/auth/login" className="text-gray-300 underline hover:text-gray-500">signing in</a> or exploring our <a href="/chat" className="text-gray-300 underline hover:text-gray-500">chatrooms</a>.
         </p>
       </div>
     </main>
