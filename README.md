@@ -27,7 +27,6 @@ Supports both **real-time chatrooms with real users** and **one-on-one conversat
 ### 🎨 Design & UX
 - 🌓 Dark mode default
 - 🪄 DiceBear avatar selection + preview
-- 🧼 Hidden scrollbars until interaction
 - 📱 Fully responsive on mobile and desktop
 
 ---
