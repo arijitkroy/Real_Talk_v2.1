@@ -63,15 +63,33 @@ export default function ChatRoomPage() {
     const memberDoc = doc(db, "chatrooms", id, "members", user.uid);
 
     const joinChat = async () => {
-      await setDoc(memberDoc, { joinedAt: serverTimestamp() });
-
-      await addDoc(collection(db, "chatrooms", id, "messages"), {
-        text: `${user.displayName} has joined the chat.`,
-        system: true,
-        createdAt: serverTimestamp(),
-      });
+      const memberSnapshot = await getDocs(
+        collection(db, "chatrooms", id, "members")
+      );
+    
+      const alreadyJoined = memberSnapshot.docs.some(
+        (doc) => doc.id === user.uid
+      );
+    
+      if (!alreadyJoined) {
+        // Only add to members and send system message if user hasn't joined yet
+        await setDoc(doc(db, "chatrooms", id, "members", user.uid), {
+          joinedAt: serverTimestamp(),
+        });
+    
+        await addDoc(collection(db, "chatrooms", id, "messages"), {
+          text: `${user.displayName} has joined the chat.`,
+          system: true,
+          createdAt: serverTimestamp(),
+        });
+      } else {
+        // Refresh member timestamp on reconnect (optional)
+        await setDoc(doc(db, "chatrooms", id, "members", user.uid), {
+          joinedAt: serverTimestamp(),
+        }, { merge: true });
+      }
     };
-
+    
     joinChat();
 
     const unsubscribe = () => {
