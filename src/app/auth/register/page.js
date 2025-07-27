@@ -6,12 +6,14 @@ import { createUserWithEmailAndPassword, updateProfile } from "firebase/auth";
 import { auth, db } from "@/lib/firebase";
 import { doc, getDoc, setDoc } from "firebase/firestore";
 import toast from "react-hot-toast";
+import { useUser } from '@/context/UserContext';
 
 export default function RegisterPage() {
   const router = useRouter();
   const [email, setEmail] = useState("");
   const [usernameInput, setUsernameInput] = useState("");
   const [password, setPassword] = useState("");
+  const { user, setUser } = useUser();
 
   const handleRegister = async (e) => {
     e.preventDefault();
@@ -62,9 +64,13 @@ export default function RegisterPage() {
       });
 
       toast.success("Account created!");
+      setUser((prev) => ({
+        ...prev,
+        displayName: username
+      }));
       router.push("/chat");
     } catch (error) {
-      toast.error(error.message);
+      toast.error('Email is already taken.');
     }
   };
 

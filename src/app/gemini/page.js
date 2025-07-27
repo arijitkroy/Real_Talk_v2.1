@@ -92,10 +92,10 @@ export default function GeminiChatPage() {
   };
 
   return (
-    <div className="bg-black text-white flex flex-col items-center px-4 py-6 overflow-hidden">
+    <div className="bg-gray-900 text-white flex flex-col items-center px-4 py-6 h-[90vh] overflow-hidden">
       <div className="text-3xl font-bold mb-4">💬 Chat with Gemini</div>
 
-      <div className="w-full max-w-7xl bg-gray-900 rounded-lg shadow p-4 flex flex-col h-[75vh] overflow-y-auto space-y-4 custom-scrollbar">
+      <div className="w-full max-w-7xl bg-gray-800 rounded-lg shadow p-4 flex flex-col h-[95vh] overflow-y-auto space-y-4 custom-scrollbar">
         {messages.map((msg, index) => (
           <div
             key={index}

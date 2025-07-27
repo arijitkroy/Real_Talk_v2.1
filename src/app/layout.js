@@ -18,7 +18,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata = {
-  title: "RealTalk Chat App",
+  title: "RealTalk Chat",
   description: "Chat in real-time or talk to Gemini AI",
 };
 

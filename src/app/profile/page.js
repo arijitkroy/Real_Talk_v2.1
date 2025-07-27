@@ -38,7 +38,7 @@ export default function ProfilePage() {
         if (userDoc.exists()) {
           const data = userDoc.data();
           setAvatarStyle(data.avatarStyle || 'thumbs');
-          if (data.photoURL) setPhotoURL(data.photoURL); // sync Firestore photoURL
+          setPhotoURL(''); // sync Firestore photoURL
         }
 
         setLoading(false);
@@ -110,10 +110,10 @@ export default function ProfilePage() {
   if (loading) return <p className="text-center mt-20">Loading profile...</p>;
 
   return (
-    <div className="h-screen flex flex-col bg-gradient-to-tr from-indigo-100 to-blue-100">
+    <div className="h-[90vh] flex flex-col bg-gray-900">
       <div className="flex-1 flex items-center justify-center">
-        <div className="bg-white p-6 rounded shadow-lg w-full max-w-md">
-          <h2 className="text-xl font-bold mb-2 text-black text-center">
+        <div className="bg-gray-800 p-6 rounded shadow-lg w-full max-w-md">
+          <h2 className="text-xl font-bold mb-2 text-white text-center">
             Welcome, {displayName || 'User'}!
           </h2>
 
@@ -128,7 +128,7 @@ export default function ProfilePage() {
             height={40}
           />
 
-          <p className="text-center text-gray-500 text-sm mb-4">Email: {localUser?.email}</p>
+          <p className="text-center text-white text-sm mb-4">Email: {localUser?.email}</p>
 
           <div className="space-y-3 mt-4">
             <input
@@ -136,7 +136,7 @@ export default function ProfilePage() {
               placeholder="Username"
               value={displayName}
               onChange={(e) => setDisplayName(e.target.value)}
-              className="w-full p-2 border rounded text-black"
+              className="w-full p-2 border rounded text-white bg-gray-700"
             />
 
             <input
@@ -144,13 +144,13 @@ export default function ProfilePage() {
               placeholder="Photo URL (optional)"
               value={photoURL}
               onChange={(e) => setPhotoURL(e.target.value)}
-              className="w-full p-2 border rounded text-black"
+              className="w-full p-2 border rounded text-white bg-gray-700"
             />
 
             <select
               value={avatarStyle}
               onChange={(e) => setAvatarStyle(e.target.value)}
-              className="w-full p-2 border rounded text-black"
+              className="w-full p-2 border rounded text-white bg-gray-700"
             >
               {avatarStyles.map((style) => (
                 <option key={style} value={style}>
